@@ -1,3 +1,3 @@
 ﻿Set-GetTwilioCredentialScriptBlock -ScriptBlock {
-    Get-PasswordstateCredential -PasswordID 5313
+    Get-PasswordstatePassword -AsCredential -ID 5313
 }
