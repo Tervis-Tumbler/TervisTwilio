@@ -81,7 +81,7 @@ function Set-HelpDeskForwardedNumber {
     param (
         $Name
     )
-        $FriendlyName = "(941) 441-4563"
+        $FriendlyName = Get-TwilioIncomingPhoneNumbers | Select-Object -ExpandProperty incoming_phone_numbers | Where-Object sid -EQ PNb766129700d9fb5bd08185748a598b07 | Select-Object -ExpandProperty friendly_name
         $VoiceUrl = Get-VoiceURL -Name $Name | Select-Object -ExpandProperty URL
         Set-TwilioIncomingPhoneNumber -FriendlyName $FriendlyName -VoiceUrl $VoiceUrl
 
