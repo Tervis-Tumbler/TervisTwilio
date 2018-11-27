@@ -15,6 +15,7 @@
     Country = "US"
 }
 
+
 $EmergencyLocations = [PSCustomObject][Ordered]@{
     DirectNumber = "+19414414701"
     Name = "Room 161"
@@ -137,7 +138,7 @@ $EmergencyLocations = [PSCustomObject][Ordered]@{
 },
 [PSCustomObject][Ordered]@{
     DirectNumber = "+19414414720"
-    FriendlyName = "Tervis Tumbler - Room 1137"
+    FriendlyName = "Tervis Tumbler - Room 137"
     Name = "Room 155"
     AddressName = "Tervis"
 },
@@ -614,6 +615,27 @@ $EmergencyLocations = [PSCustomObject][Ordered]@{
     FriendlyName = "Tervis Tumbler - Front Lobby"
     Name = "Room 155"
     AddressName = "Tervis"
+}
+
+$VoiceURLs = [PSCustomObject][Ordered]@{
+    Name = "Hossein"
+    URL = "https://handler.twilio.com/twiml/EHebddd32f37a350436c122c9f72e927a4" 
+},
+[PSCustomObject][Ordered]@{
+    Name = "Hamilton"
+    URL = "https://handler.twilio.com/twiml/EHe7e0af820958aa902e2ee2ca32bfefee"
+},
+[PSCustomObject][Ordered]@{
+    Name = "Chris"
+    URL = "https://handler.twilio.com/twiml/EHb373c1731b9655b89c84f5ba575aae10"
+},
+[PSCustomObject][Ordered]@{
+    Name = "Adan"
+    URL = "https://handler.twilio.com/twiml/EH9f6d5998ee0ee9221c3c69a75fb6bfd5"
+},
+[PSCustomObject][Ordered]@{
+    Name = "Don"
+    URL = "https://handler.twilio.com/twiml/EHd50bbb8e50f8f9be9d8f4b912af42b28"
 }
 
 

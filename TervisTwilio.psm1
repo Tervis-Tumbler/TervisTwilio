@@ -13,6 +13,13 @@ function Get-EmergencyAddress {
     Where-Object Name -EQ $Name
 }
 
+function Get-VoiceURL {
+    param (    
+        $Name
+    )
+    $voiceurls | Where-Object Name -EQ $Name
+}
+
 function Get-EmergencyResponseLocationAddresses {
     foreach ($EmergencyLocation in $EmergencyLocations) {
         $EmergencyAddress = Get-EmergencyAddress -Name $EmergencyLocation.AddressName
@@ -68,5 +75,15 @@ function Set-TervisSipTrunkOnPhoneNumber {
     process {
         Set-TwilioIncomingPhoneNumber -FriendlyName $FriendlyName -TrunkSid "TK59ae204b72e3b329cd361c0060c4e17c"
     }
+}
+
+function Set-HelpDeskForwardedNumber {
+    param (
+        $Name
+    )
+        $FriendlyName = "(941) 441-4563"
+        $VoiceUrl = Get-VoiceURL -Name $Name | Select-Object -ExpandProperty URL
+        Set-TwilioIncomingPhoneNumber -FriendlyName $FriendlyName -VoiceUrl $VoiceUrl
+
 }
 
