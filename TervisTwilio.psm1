@@ -16,9 +16,20 @@ function Get-EmergencyAddress {
 function Get-VoiceURL {
     param (    
         $Name
+        
     )
     $voiceurls | Where-Object Name -EQ $Name
 }
+
+function Get-WhoHasHelpDeskPhone {
+
+    $HelpDeskNumberUrl = Get-TwilioIncomingPhoneNumbers Get-TwilioIncomingPhoneNumbers | select -ExpandProperty incoming_phone_numbers | where friendly_name -EQ "(941) 441-4563" | select -ExpandProperty voice_url
+    $PhoneKeeper = $VoiceURLs | where url -EQ $HelpDeskNumberUrl | select -ExpandProperty Name
+    Write-Host " $PhoneKeeper has the HelpDesk Phone"
+
+}
+
+
 
 function Get-EmergencyResponseLocationAddresses {
     foreach ($EmergencyLocation in $EmergencyLocations) {
